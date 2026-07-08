@@ -39,6 +39,14 @@
     width: 100%;
     transform-style: preserve-3d;
     animation: spin360 9s linear infinite;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: #ffffff;
+  }
+
+  .carousel-spin img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   @keyframes spin360 {
