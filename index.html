@@ -27,31 +27,30 @@
     height: auto;
   }
 
-  /* ---------- Carrusel 360 horizontal ---------- */
+  /* ---------- Carrusel horizontal (efecto 2D, compatible con navegador interno de WhatsApp) ---------- */
   .carousel-stage {
     width: 100%;
-    perspective: 1400px;
     overflow: hidden;
     background: #ffffff;
   }
 
   .carousel-spin {
     width: 100%;
-    transform-style: preserve-3d;
-    animation: spin360 9s linear infinite;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    transform-origin: 50% 50%;
+    animation: spinFlip 6s ease-in-out infinite;
     background: #ffffff;
   }
 
-  .carousel-spin img {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-
-  @keyframes spin360 {
-    from { transform: rotateY(0deg); }
-    to   { transform: rotateY(360deg); }
+  @keyframes spinFlip {
+    0%    { transform: scaleX(1); }
+    12.5% { transform: scaleX(0.72); }
+    25%   { transform: scaleX(0.18); }
+    37.5% { transform: scaleX(0.72); }
+    50%   { transform: scaleX(1); }
+    62.5% { transform: scaleX(0.72); }
+    75%   { transform: scaleX(0.18); }
+    87.5% { transform: scaleX(0.72); }
+    100%  { transform: scaleX(1); }
   }
 
   @media (prefers-reduced-motion: reduce) {
